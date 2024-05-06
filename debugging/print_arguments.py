@@ -8,8 +8,14 @@ def factorial(n):
         n = n - 1
     return result
 
-try:
+# Check if there are command-line arguments
+if len(sys.argv) > 1:
+    # Calculate factorial
     f = factorial(int(sys.argv[1]))
     print(f)
-except IndexError:
+
+    # Print remaining command-line arguments on separate lines
+    for arg in sys.argv[2:]:
+        print(arg)
+else:
     print("Usage: python script.py <integer>")
